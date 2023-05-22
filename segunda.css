@@ -1,0 +1,64 @@
+body{
+    background-image: linear-gradient(to bottom, rgba(79, 78, 145, 0.8), rgba(99, 99, 176, 0.5));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}  
+.header-island {
+    width: auto;
+    height: auto;
+    background-color: rgba(242, 242, 242, 0.8);    
+    padding: 20px;
+    border-radius: 35px;
+    position: fixed;
+    
+}
+.header-island nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.header-island nav li {
+    display: inline;
+}
+  
+.header-island nav li:not(:last-child):after {
+    content: " | ";
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.form-container {
+    width: 300px;
+    float: right;
+    margin-left: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
