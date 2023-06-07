@@ -1,0 +1,53 @@
+body{
+    background-color: #fff
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  img {
+    width: 150px; /* Ajustar el tamaño */
+  }
+  
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(116, 184, 179); /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    text-decoration: none;
+    margin-right: 10px;
+    border-radius: 35px;
+  }
+  
+  .button:hover {
+    background-color: #2ec4b6ff; /* Color de fondo del botón al pasar el cursor por encima */
+  }
+
+  footer {
+    background-color: #cbf3f0ff; /* Color de fondo del footer */
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  footer p {
+    margin: 0;
+    color: #2ec4b6ff; /* Color del texto del footer */
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 24px; /* Ajustar el tamaño */
+    color: #333; /* Color del texto */
+  }
+  
+  
+  
