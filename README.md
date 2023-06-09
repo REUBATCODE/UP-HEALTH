@@ -11,5 +11,4 @@ Proyecto para administrar usuarios y ejercicios de un gymnasio
 
 ### Entorno local
 - XAMPP
-
-
+- 
