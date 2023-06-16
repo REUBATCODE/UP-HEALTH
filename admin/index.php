@@ -1,3 +1,8 @@
+<?php 
+
+    $mensaje = $_GET['mensaje'] ?? null;
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -49,13 +54,16 @@
         </h3>
 
         <div class ="values">
-            <div class ="val-box">
-                <i class = "fas fa-users"></i>
-                <div>
-                    <h3> Usuarios</h3>
-                    <span> Nuevos Usuarios</span>
+            <a href="./users-admin/crear.php">
+                <div class ="val-box">
+                    <i class = "fas fa-users"></i>
+                    <div>
+                        <h3> Usuarios</h3>
+                        <span> Nuevos Usuarios</span>
+                    </div>
                 </div>
-            </div>
+            </a>
+            
             <div class ="val-box">
                 <i class = "fas fa-heart"></i>
                 <div>
