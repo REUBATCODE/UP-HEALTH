@@ -44,7 +44,6 @@
 
             <div class = "profile">
                 <i class ="far fa-bell"></i>
-                <img src="..//img/usuarioPerfil.jpg" alt="">
             </div>
         </div>
 
@@ -53,7 +52,7 @@
         </h3>
 
         <div class ="values">
-            <a href="./users-admin/crear.php">
+            <a href="./crear.php">
                 <div class ="val-box">
                     <i class = "fas fa-users"></i>
                     <div>
@@ -88,3 +87,6 @@
 
 </body>
 </html>
+<?php 
+    mysqli_close($con);
+?>

@@ -1,6 +1,6 @@
 <?php 
     include '../../helpers/funciones-ayuda.php';
-    $con = mysqli_connect('localhost', 'jban', '', 'uphealth', '3306');
+    $con = mysqli_connect('localhost', 'jban', '', 'up', '3306');
     if(!$con){
         echo "no conecto a base de datos";
     }
@@ -73,6 +73,7 @@
             
             $folderPath= "../../img/img-user-admin/";
             $imgPath = "";
+            $imgName = "";
             // crea folder si no existe
             if(!is_dir($folderPath)){
                 mkdir($folderPath);
@@ -85,7 +86,7 @@
                 // mueve de el servidor al path del proyecto
                 move_uploaded_file($imgPerfil['tmp_name'], $imgPath);
                 
-                str_replace($folderPath, '', $imgPath);
+                $imgName = str_replace($folderPath, '', $imgPath);
             }
             $passwordEncrypted = password_hash($password, PASSWORD_BCRYPT);
             // insertar en bd
@@ -103,7 +104,7 @@
                 '$nombre',
                 '$apellidos',
                 '$numero_empleado',
-                '$imgPath',
+                '$imgName',
                 '$email',
                 '$passwordEncrypted',
                 '$cel',
@@ -112,7 +113,7 @@
             )";
             $res = mysqli_query($con, $query);
             if($res){
-                header('location: /admin/index.php?mensaje=1');
+                header('location: /index.php?mensaje=1');
             }   
         } 
 

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="stylesheet" href="..//css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="planesRutinas.html">
+    <link rel="stylesheet" href="planesRutinas.php">
 </head>
 <body>
     <section id = "menu">
@@ -54,7 +54,7 @@
         </h3>
 
         <div class ="values">
-            <a href="./users-admin/crear.php">
+            <a href="./users-admin">
                 <div class ="val-box">
                     <i class = "fas fa-users"></i>
                     <div>

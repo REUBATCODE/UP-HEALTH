@@ -5,8 +5,19 @@
         echo "no conecto a base de datos";
     }
     $query = "SELECT * FROM admin";
-    if($res = $con->query($query)){
-    }    
+    $res = $con->query($query);
+    if($_SERVER["REQUEST_METHOD"] === "POST"){
+        $id_admin = $_POST["id_admin"];
+        verinfo_var($id_admin);
+        $id_admin = filter_var($id_admin, FILTER_VALIDATE_INT);
+        if($id){
+            $query = "DELETE FROM admin WHERE id_admin = $id_admin";
+            $res = $con->query($query);
+            if($res){
+                header('Location: /admin/users-admin');
+            }
+        }
+    }  
 ?>
 <main>
     <table>
@@ -24,7 +35,7 @@
             <?php while($adminRow = $res->fetch_assoc()):?>
             <tr>
                 <td>
-                    <img src="<?php echo $adminRow['imagen']?>" alt="">
+                    <img src="../../img/img-user-admin/<?php echo $adminRow['imagen']?>" alt="">
                 </td>
                 <td>
                     <?php echo $adminRow['num_empleado'];?>
@@ -47,12 +58,10 @@
                 </td>
                 <td>
                     <form action="">
-                        <input type="hidden">
-                        <input type="submit" value="borrar">
+                        <input type="hidden" name="id_eliminar" value="<?php echo $adminRow['id_admin']?>">
+                        <input type="submit" value="Eliminar">
                     </form>
-                    <form action="">
-                        <a href="">Modificar</a>
-                    </form>
+                    <a href="./modificar.php?id=<?php echo $adminRow["id_admin"]; ?>">Modificar></a>
                 </td>
             </tr>
             <?php endwhile;?>
@@ -60,5 +69,6 @@
         </tbody>
         
     </table>
+
 </main>
 
