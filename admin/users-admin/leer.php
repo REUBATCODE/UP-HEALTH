@@ -1,25 +1,55 @@
 <?php
+    $mostrar ="";
     include '../../helpers/funciones-ayuda.php';
     $con = mysqli_connect('localhost', 'jban', '', 'up', '3306');
     if(!$con){
         echo "no conecto a base de datos";
     }
-    $query = "SELECT * FROM admin";
+    $query = "SELECT * FROM admin WHERE status='activo';";
     $res = $con->query($query);
     if($_SERVER["REQUEST_METHOD"] === "POST"){
-        $id_admin = $_POST["id_admin"];
-        verinfo_var($id_admin);
+        $id_admin = $_POST["id_eliminar"] ?? null;
+        $activos = $_POST["mostrar_activos"] ?? null;
+        $bajas = $_POST["mostrar_bajas"] ?? null;
         $id_admin = filter_var($id_admin, FILTER_VALIDATE_INT);
-        if($id){
-            $query = "DELETE FROM admin WHERE id_admin = $id_admin";
+        if($id_admin){
+            $query = "UPDATE admin SET status='baja' WHERE id_admin = $id_admin";
+            echo $query;
             $res = $con->query($query);
             if($res){
-                header('Location: /admin/users-admin');
+                header('Location: ./index.php?delete=1');
             }
         }
+        if($activos){
+            $query = "SELECT * FROM admin WHERE status='$activos';";
+            $res = $con->query($query);
+        }
+        if($bajas){
+            $query = "SELECT * FROM admin WHERE status='$bajas';";
+            $res = $con->query($query);
+        }
+        if($activos && $bajas) {
+            $query = "SELECT * FROM admin;";
+            $res = $con->query($query);
+        }
+        
     }  
 ?>
 <main>
+    <div>
+        <form  method="post">
+        <label for="todos">
+            Baja       
+            <input type="checkbox" name="mostrar_bajas" id="todos" value="baja">
+        </label>
+        <label for="todos">
+            Activos       
+            <input type="checkbox" name="mostrar_activos" id="todos" value="activos">
+        </label>
+        <input type="submit" value="Aplicar Filtros">
+        </form>
+    </div>
+    <div>
     <table>
         <thead>
             <tr>
@@ -57,7 +87,7 @@
 
                 </td>
                 <td>
-                    <form action="">
+                    <form method="post">
                         <input type="hidden" name="id_eliminar" value="<?php echo $adminRow['id_admin']?>">
                         <input type="submit" value="Eliminar">
                     </form>
@@ -69,6 +99,8 @@
         </tbody>
         
     </table>
+    </div>
+
 
 </main>
 

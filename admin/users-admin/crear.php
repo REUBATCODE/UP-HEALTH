@@ -88,7 +88,6 @@
                 
                 $imgName = str_replace($folderPath, '', $imgPath);
             }
-            $passwordEncrypted = password_hash($password, PASSWORD_BCRYPT);
             // insertar en bd
             $query = "INSERT INTO admin(
                 nombre,
