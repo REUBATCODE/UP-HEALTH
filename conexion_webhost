@@ -1,0 +1,1 @@
+new mysqli("localhost", "id20924410_rbrv", "RBRV16180rbrv/", "id20924410_pos") or die("Por alguna razón, no se pudo conectar al servidor.");
