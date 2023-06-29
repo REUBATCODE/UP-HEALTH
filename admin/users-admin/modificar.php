@@ -5,7 +5,6 @@
     if(!$id){
         header('Location: ./index.php');
     }
-    verinfo_var($id);
     $con = mysqli_connect('localhost', 'jban', '', 'up', '3306');
     if(!$con){
         echo "no conecto a base de datos";
@@ -13,7 +12,6 @@
     $query = "SELECT * FROM admin WHERE id_admin=$id";
     $res = mysqli_query($con,$query);
     $admin = mysqli_fetch_assoc($res);
-    verinfo_var($admin);
     $validaciones = [];
     
     $nombre =  $admin["nombre"];
@@ -28,10 +26,10 @@
 
 
     if($_SERVER["REQUEST_METHOD"] === 'POST') {
+        
+        // asigna from files global var a una variable
+        $imgPerfil = $_FILES['imagen'];
 
-        
-        $imgPerfil = $_POST['image'] ?? null;
-        
         // escapa caracteres especiales 
         $nombre = mysqli_real_escape_string($con, $_POST['nombre']);
         $apellidos = mysqli_real_escape_string($con, $_POST['apellidos']);
@@ -40,8 +38,9 @@
         $password = mysqli_real_escape_string($con, $_POST['pass']);
         $date = $_POST['date'] ?? null;
         $rol = $_POST['rol'] ?? null;
-        $status = $_POST['status'];
+        $status = $_POST['status'] ?? null;
         $numero_empleado = mysqli_real_escape_string($con, $_POST['numero_empleado']);
+        // Validaciones de nulos o vacios
         if(!$nombre) {
             $validaciones[] = "Te falto capturar un nombre";
         }
@@ -76,7 +75,7 @@
         }
         
 
-        
+        // tamaño maximo de la imagen        
         $imgSize = 2*1000*1000;       
 
         
@@ -93,18 +92,17 @@
             if(!is_dir($folderPath)){
                 mkdir($folderPath);
             }
-            // guarda img
-            if($imgPerfil =! null){
-                // El path no cambia 
-                $imgPath = $admin["imagen"];
-            }else {
+            // Renplaza por una una  img 
+            if($imgPerfil['name']) {
                 // Borra img anterior y crea una nueva
                 unlink($folderPath . $admin["imagen"]);
                 // crea un path
-                $imgPath = $folderPath . md5(uniqid(rand(), true)) . $imgPerfil['name'];
+                $imgPath = md5(uniqid(rand(), true)) . $imgPerfil['name'];
                 mkdir(dirname($imgPath));
                 // mueve de el servidor al path del proyecto
-                move_uploaded_file($imgPerfil['tmp_name'], $imgPath); 
+                move_uploaded_file($imgPerfil['tmp_name'], $folderPath.$imgPath); 
+            }else{
+                $imgPath = $admin["imagen"];
             }
             str_replace($folderPath, '', $imgPath);
             // insertar en bd
@@ -162,7 +160,7 @@
                     <option name="rol" value="super">SUPER ADMIN</option>
                 </select>
 
-                <select name="status" id="">
+                <select name="status">
                     <option value="<?php echo $status?>"  name = "status" selected disabled><?php echo $status?></option>
                     <option value="baja" name = "status">baja</option>
                     <option value="activo" name = "status">activo</option>

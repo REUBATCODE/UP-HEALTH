@@ -57,8 +57,6 @@
             $validaciones[] = "Te falto capturar la fecha de nacimiento";
 
         }
-        verinfo_var($imgPerfil);
-        verinfo_var($_POST);
 
         if(!$imgPerfil || !str_contains($imgPerfil['type'],  'image')) {
             $validaciones[] = "Imagen no valida";
@@ -81,10 +79,10 @@
             // guarda img
             if($imgPerfil){
                 // crea un path
-                $imgPath = $folderPath . md5(uniqid(rand(), true)) . '/' . $imgPerfil['name'];
+                $imgPath = md5(uniqid(rand(), true)) . $imgPerfil['name'];
                 mkdir(dirname($imgPath));
                 // mueve de el servidor al path del proyecto
-                move_uploaded_file($imgPerfil['tmp_name'], $imgPath);
+                move_uploaded_file($imgPerfil['tmp_name'], $folderPath.$imgPath);
                 
                 $imgName = str_replace($folderPath, '', $imgPath);
             }
@@ -112,7 +110,7 @@
             )";
             $res = mysqli_query($con, $query);
             if($res){
-                header('location: /index.php?mensaje=1');
+                header('location: ./index.php?mensaje=1');
             }   
         } 
 
@@ -144,7 +142,7 @@
                 <input type="text" placeholder="nombre" name="nombre">
                 <input type="text" placeholder="apellidos" name="apellidos">
                 <input type="date" name="date">
-                <input type="tel" placeholder="celular" name="cel">
+                <input type="tel" placeholder="celular" name="cel" maxlength="10">
                 <input type="email" placeholder="correo" name="email">
                 <input type="password" placeholder="contraseña" name="pass">
                 <input type="text" placeholder="numero de empleado" name="numero_empleado">
