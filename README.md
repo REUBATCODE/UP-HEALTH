@@ -1,5 +1,11 @@
-# practica-html
-Práctica para la Universidad Tecnológica de Hermosillo en la materia de Desarrollo Web. En esta práctica creamos dos páginas, una que es HOME, y otra para SUGERENCIAS con un formulario para enviar el texto junto a un correo electrónico. Además, hay un tercer botón que da enlace al periódico de EL UNIVERSAL.
+# Proyecto de Integradora. 
+## UP-HEALTH. 
+..* La aplicación tendrá como función cargar que un usuario inicie, dependiendo del nivel que tenga el usuario podrá acceder a ciertas características. 
+1. El usuario podrá generar de una gama de rutinas/entrenamientos, lo que más se enfoque a sus necesidades. 
+2. El usuario podrá añadir nuevos entrenamientos a su lista de entrenamientos. 
+3. El usuario administrador podrá agregar a nuevos usuarios confirmando su entrada. 
+4. El usuario administrador podrá crear/modificar/eliminar planes de entrenamiento. 
+5. Se podrá generar una membresía. 
 
 //
 Temática de la página:
