@@ -35,8 +35,13 @@
             </div>
         </section>
         <section class="info contenedor">
-            <div class="info-1">
+            <h3>Porque es bueno hacer ejercicio?...</h3>
+            <div class="info-card">
                 <img src="img/info-2a.jpg" alt="mujer-levantando-pesas">
+                <p>Los ejercicios de fuerza mejoran la densidad ósea, disminuyendo así el posible riesgo de osteoporosis o fracturas y protegiendo a la vez nuestras articulaciones.</p>
+            </div>
+            <div class="info-card flex-direction-row-reverse">
+                <img src="img/info-3a.jpg" alt="mujer-levantando-pesas">
                 <p>Los ejercicios de fuerza mejoran la densidad ósea, disminuyendo así el posible riesgo de osteoporosis o fracturas y protegiendo a la vez nuestras articulaciones.</p>
             </div>
         </section>
