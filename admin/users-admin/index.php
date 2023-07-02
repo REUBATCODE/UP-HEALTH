@@ -11,9 +11,9 @@
     <title>Dashboard Admin</title>
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
-    <link rel="stylesheet" href="..//css/style.css">
+    <link rel="stylesheet" href="../..//css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="planesRutinas.php">
+    <link rel="stylesheet" href="planesRutinas.html">
 </head>
 <body>
     <section id = "menu">
@@ -22,7 +22,6 @@
             <a href="index.html"><h2>Menú</h2></a>
         </div>
         </div>
-        <!-----crearemos el menu desplegable test ----->
             <div id = "sidebar" class ="items">
                     <li><i class="fas fa-clipboard"></i><a href="planesRutinas.html"> Planes de Rutinas</a></li>
                     <li><i class="fas fa-dumbbell"></i><a href="#"> Ejercicios</a></li>
@@ -45,7 +44,6 @@
 
             <div class = "profile">
                 <i class ="far fa-bell"></i>
-                <img src="..//img/usuarioPerfil.jpg" alt="">
             </div>
         </div>
 
@@ -54,7 +52,7 @@
         </h3>
 
         <div class ="values">
-            <a href="./users-admin">
+            <a href="./crear.php">
                 <div class ="val-box">
                     <i class = "fas fa-users"></i>
                     <div>
@@ -80,45 +78,11 @@
             </div>
         </div>
         <div class = "board">
-            <table width = "100%">
-                <thead>
-                    <tr>
-                        <td>Nombre</td>
-                        <td>Correo de Contacto</td>
-                        <td>Rol</td>
-                        <td>Status</td>
-                        <td>Acción</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!----de aquí es donde se agregan usuarios en la tabla----->
-                    <tr>
-                        <td class ="people">
-                            <img src="..//img/usuarioPerfil.jpg" alt="">
-                            <div class ="people-descrip">
-                                <h5>Alguien</h5>
-                            </div>
-                        </td>
-                        <td class = "people-correo">
-                            <p>alguien@gmail.com</p>
-                        </td>
-                        <td class = "usuario">
-                            <p>Admin</p>
-                        </td>
-                        <td class = "status">
-                            <p>Activo</p>
-                        </td>
-
-                        <td class ="edit"><a href="#"> Edit</a></td>
-
-                    </tr>
-                    <!---aqui termina-->
-                </tbody>
-            </table>
+        <?php include './leer.php'; ?>
         </div>
 
     </section>
 
 
-    </body>
+</body>
 </html>
