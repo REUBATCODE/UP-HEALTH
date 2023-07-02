@@ -18,8 +18,8 @@
                     </a>
                     <nav class="nav">
                         <a href="./">HOME</a>
-                        <a href="./">Registrarse</a>
-                        <a href="./">Iniciar Session</a>
+                        <a href="./singin.php">Registrarse</a>
+                        <a href="./login.php">Iniciar Session</a>
                     </nav>
                 </div>
         </div>
@@ -27,12 +27,17 @@
     <main class="contenedor">
         <h1>Inicia tu entrenamiento</h1>
         <p>Desde La comodidad de tu casa</p>
-        <section class="subscribete">
-                
+        <section class="subscribete"> 
             <div class="subscribete-comprar">   
                 <a href="./">
                     <p>Empieza Ya!!</p>
                 </a>
+            </div>
+        </section>
+        <section class="info contenedor">
+            <div class="info-1">
+                <img src="img/info-2a.jpg" alt="mujer-levantando-pesas">
+                <p>Los ejercicios de fuerza mejoran la densidad ósea, disminuyendo así el posible riesgo de osteoporosis o fracturas y protegiendo a la vez nuestras articulaciones.</p>
             </div>
         </section>
     </main>
