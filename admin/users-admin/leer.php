@@ -1,10 +1,8 @@
 <?php
-    $mostrar ="";
     include '../../helpers/funciones-ayuda.php';
-    $con = mysqli_connect('localhost', 'jban', '', 'up', '3306');
-    if(!$con){
-        echo "no conecto a base de datos";
-    }
+    include '../../includes/db.php';
+    $mostrar ="";
+    $con = connectDB();
     $query = "SELECT * FROM admin WHERE status='activo';";
     $res = $con->query($query);
     if($_SERVER["REQUEST_METHOD"] === "POST"){

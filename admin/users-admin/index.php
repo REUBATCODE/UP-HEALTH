@@ -79,7 +79,6 @@
         </div>
         <div class = "board">
         <?php include './leer.php'; ?>
-
         </div>
 
     </section>
@@ -87,6 +86,3 @@
 
 </body>
 </html>
-<?php 
-    mysqli_close($con);
-?>

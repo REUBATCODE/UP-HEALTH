@@ -1,14 +1,12 @@
 <?php 
     include '../../helpers/funciones-ayuda.php';
+    include '../../includes/db.php';
     $id = $_GET["id"];
     $id = filter_var($id, FILTER_VALIDATE_INT);
     if(!$id){
         header('Location: ./index.php');
     }
-    $con = mysqli_connect('localhost', 'jban', '', 'up', '3306');
-    if(!$con){
-        echo "no conecto a base de datos";
-    }
+    $con = connectDB();
     $query = "SELECT * FROM admin WHERE id_admin=$id";
     $res = mysqli_query($con,$query);
     $admin = mysqli_fetch_assoc($res);
