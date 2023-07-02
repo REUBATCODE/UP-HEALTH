@@ -22,9 +22,7 @@
             <a href="index.html"><h2>Menú</h2></a>
         </div>
         </div>
-        <!-----crearemos el menu desplegable 
-            "V1.2 New line Login desde main change by Prof. Chenoweth "
-        ----->
+        <!-----crearemos el menu desplegable test ----->
             <div id = "sidebar" class ="items">
                     <li><i class="fas fa-clipboard"></i><a href="planesRutinas.html"> Planes de Rutinas</a></li>
                     <li><i class="fas fa-dumbbell"></i><a href="#"> Ejercicios</a></li>
@@ -122,5 +120,5 @@
     </section>
 
 
-</body>
+    </body>
 </html>
