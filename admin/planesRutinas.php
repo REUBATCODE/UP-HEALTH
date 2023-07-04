@@ -1,3 +1,13 @@
+<?php
+    include '..//helpers/funciones-ayuda.php';
+    include '../includes/db.php';
+?>
+    <?php
+        $con = connectDB();
+        $mostrar ="";
+        $query = "SELECT * FROM rutina;";
+        $res = $con->query($query);                  
+    ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,14 +27,14 @@
     <section id = "menu">
         <div class = "logo">
             <img src="..//img/logo.png" alt="">
-            <a href="index.html"><h2>Menú</h2></a>
+            <a href="./index.php"><h2>Menú</h2></a>
         </div>
     </div>
     <!-----crearemos el menu desplegable----->
         <div id = "sidebar" class ="items">
             <ul>
-                <li><i class="fas fa-clipboard"></i><a href="planesRutinas.html" > Planes de Rutinas</a></li>
-                <li><i class="fas fa-dumbbell"></i><a href="#"> Ejercicios</a></li>
+                <li><i class="fas fa-clipboard"></i><a href="./planesRutinas.php" > Ejercicios</a></li>
+                <li><i class="fas fa-dumbbell"></i><a href="#"> Rutinas de Entrenamiento</a></li>
             </ul>
         </div>
     </div> 
@@ -51,43 +61,39 @@
         <h3 class = "i-name">
             Lista de Ejercicios
         </h3>
-
-        <!-----------------------CORREGIR ESTA PARTE EN STYLE.CSS----------------------->
+        <form action = "./ejercicios_admin/crear_ejercicio_front.php" method = "post">
+            <input type = "submit" value ="Agregar" name ="crearNuevoEjercicio">
+        </form>
         <div class = "board-ejercicio">
             <table width = "100%">
                 <thead>
                     <tr>
-                        <td>Nombre del Ejercicio</td>
+                        <td>Id Ejercicio</td>
+                        <td>Nombre</td>
+                        <td>Grupo Muscular</td>
+                        <td>Descripción</td>
                         <td>Imagen</td>
-                        <td>Descripcion</td>
-                        <td>Acción</td>
+                        <td class = "edit">Acción</td>
+                        <td class = "delet">Acción</td>
                     </tr>
                 </thead>
                 <tbody>
-                    <!----de aquí es donde se agregan ejercicios en la tabla----->
                     <tr>
-                        <td class ="people">
-                            <img src="..//img/ejercicios/presPechoBancoPlano.jpeg" alt="">
-                            <div class ="people-descrip">
-                                <h5>Press Pecho Banco Plano</h5>
-                            </div>
+                    <?php while($registro = $res->fetch_assoc()):?>
+                        <td class ="idRutina"><?php echo $registro['id_ejercicio'];?></td>
+                        <td class = "nombreRutina"><?php echo $registro['nombre_ejercicio'];?></td>
+                        <td class = "grupoMuscular"><?php echo $registro['grupo_muscular'];?></td>
+                        <td class = "descripcion"><?php echo $registro['descripcion'];?></td>
+                        <td class = "imagen">
+                        <img src="..//img/ejercicios/<?php echo $registro['imagen'];?>" width = '200px' heigth = '75px'>
                         </td>
-                        <td class = "people-correo">
-                            <p>alguien@gmail.com</p>
-                        </td>
-                        <td class = "usuario">
-                            <p>Admin</p>
-                        </td>
-                        <td class ="edit"><a href="#"> Edit</a></td>
-
+                        <td class ="edit">Editar</td>
+                        <td class ="delet"><a href="./ejercicios_admin/delete_ejercicios.php?id_ejercicio=<?php echo $registro['id_ejercicio'];?>&imagen=<?php echo $registro['imagen']?>">Eliminar</a></td>
                     </tr>
-                    <!---aqui termina-->
+                    <?php endwhile;?>
                 </tbody>
             </table>
         </div>
-    </section>
-
-
-    
+    </section> 
 </body>
 </html>

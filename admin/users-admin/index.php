@@ -18,12 +18,12 @@
 <body>
     <section id = "menu">
         <div class = "logo">
-            <img src="..//img/logo.png" alt="">
-            <a href="index.html"><h2>Menú</h2></a>
+            <img src="../../img/logo.png" alt="">
+            <a href="../../admin/index.php"><h2>Menú</h2></a>
         </div>
         </div>
             <div id = "sidebar" class ="items">
-                    <li><i class="fas fa-clipboard"></i><a href="planesRutinas.html"> Planes de Rutinas</a></li>
+                    <li><i class="fas fa-clipboard"></i><a href="../planesRutinas.php"> Planes de Rutinas</a></li>
                     <li><i class="fas fa-dumbbell"></i><a href="#"> Ejercicios</a></li>
                 </ul>
             </div>
@@ -44,6 +44,7 @@
 
             <div class = "profile">
                 <i class ="far fa-bell"></i>
+                <img src="..//..//img/usuarioPerfil.jpg" alt="">
             </div>
         </div>
 
