@@ -11,7 +11,7 @@ try{
     if(file_exists($rutaArchivo)){
         unlink($rutaArchivo);
     }
-    $queryDeleteEjercicios = "DELETE FROM rutina WHERE id_ejercicio = '$id';";
+    $queryDeleteEjercicios = "DELETE FROM ejercicios WHERE id_ejercicio = '$id';";
     echo $queryDeleteEjercicios;
     $comando = mysqli_query($con,$queryDeleteEjercicios);
     if($comando){

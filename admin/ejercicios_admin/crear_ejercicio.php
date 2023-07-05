@@ -49,7 +49,7 @@ if (empty($validaciones)) {
         $imgName = str_replace($folderPath, '', $imgPath);
     }
     // insertar en bd
-    $query = "INSERT INTO rutina (id_ejercicio, nombre_ejercicio, grupo_muscular, descripcion, imagen)
+    $query = "INSERT INTO ejercicios (id_ejercicio, nombre_ejercicio, grupo_muscular, descripcion, imagen)
     VALUES (null, '$nombre', '$grupo_muscular', '$descripcion', '$imgName')
     ";
     echo $query; 

@@ -5,7 +5,7 @@
     <?php
         $con = connectDB();
         $mostrar ="";
-        $query = "SELECT * FROM rutina;";
+        $query = "SELECT * FROM ejercicios;";
         $res = $con->query($query);                  
     ?>
 <html lang="en">
@@ -87,7 +87,7 @@
                         <td class = "imagen">
                         <img src="..//img/ejercicios/<?php echo $registro['imagen'];?>" width = '200px' heigth = '75px'>
                         </td>
-                        <td class ="edit">Editar</td>
+                        <td class ="edit"><a href="./ejercicios_admin/update_ejercicios.php?id_ejercicio=<?php echo $registro['id_ejercicio'];?>">Editar</a></td>
                         <td class ="delet"><a href="./ejercicios_admin/delete_ejercicios.php?id_ejercicio=<?php echo $registro['id_ejercicio'];?>&imagen=<?php echo $registro['imagen']?>">Eliminar</a></td>
                     </tr>
                     <?php endwhile;?>
