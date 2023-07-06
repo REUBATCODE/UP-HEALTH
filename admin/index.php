@@ -45,7 +45,7 @@
 
             <div class = "profile">
                 <i class ="far fa-bell"></i>
-                <img src="..//img/usuarioPerfil.jpg" alt="">
+                <img src="../img/usuarioPerfil.jpg" alt="">
             </div>
         </div>
 
@@ -94,7 +94,7 @@
                     <!----de aquí es donde se agregan usuarios en la tabla----->
                     <tr>
                         <td class ="people">
-                            <img src="..//img/usuarioPerfil.jpg" alt="">
+                            <img src="../img/usuarioPerfil.jpg" alt="">
                             <div class ="people-descrip">
                                 <h5>Alguien</h5>
                             </div>
