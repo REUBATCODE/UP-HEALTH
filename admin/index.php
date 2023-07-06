@@ -11,14 +11,14 @@
     <title>Dashboard Admin</title>
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
-    <link rel="stylesheet" href="..//css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="planesRutinas.php">
 </head>
 <body>
     <section id = "menu">
         <div class = "logo">
-            <img src="..//img/logo.png" alt="">
+            <img src="../img/logo.png" alt="">
             <a href="../admin/index.php"><h2>Menú</h2></a>
         </div>
         </div>

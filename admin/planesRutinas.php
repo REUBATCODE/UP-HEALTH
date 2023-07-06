@@ -1,5 +1,5 @@
 <?php
-    include '..//helpers/funciones-ayuda.php';
+    include '../helpers/funciones-ayuda.php';
     include '../includes/db.php';
 ?>
     <?php
@@ -14,7 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planes de Rutina</title>
-    <link rel="stylesheet" href="..//css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="stylesheet" href="../css/style.css">
@@ -26,7 +26,7 @@
 
     <section id = "menu">
         <div class = "logo">
-            <img src="..//img/logo.png" alt="">
+            <img src="../img/logo.png" alt="">
             <a href="./index.php"><h2>Menú</h2></a>
         </div>
     </div>
@@ -54,7 +54,7 @@
 
             <div class = "profile">
                 <i class ="far fa-bell"></i>
-                <img src="..//img/usuarioPerfil.jpg" alt="">
+                <img src="../img/usuarioPerfil.jpg" alt="">
             </div>
         </div>
 
@@ -85,7 +85,7 @@
                         <td class = "grupoMuscular"><?php echo $registro['grupo_muscular'];?></td>
                         <td class = "descripcion"><?php echo $registro['descripcion'];?></td>
                         <td class = "imagen">
-                        <img src="..//img/ejercicios/<?php echo $registro['imagen'];?>" width = '200px' heigth = '75px'>
+                        <img src="../img/ejercicios/<?php echo $registro['imagen'];?>" width = '200px' heigth = '75px'>
                         </td>
                         <td class ="edit"><a href="./ejercicios_admin/update_ejercicios.php?id_ejercicio=<?php echo $registro['id_ejercicio'];?>">Editar</a></td>
                         <td class ="delet"><a href="./ejercicios_admin/delete_ejercicios.php?id_ejercicio=<?php echo $registro['id_ejercicio'];?>&imagen=<?php echo $registro['imagen']?>">Eliminar</a></td>
