@@ -11,14 +11,14 @@
     <title>Dashboard Admin</title>
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
-    <link rel="stylesheet" href="..//css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="planesRutinas.php">
 </head>
 <body>
     <section id = "menu">
         <div class = "logo">
-            <img src="..//img/logo.png" alt="">
+            <img src="../img/logo.png" alt="">
             <a href="index.html"><h2>Menú</h2></a>
         </div>
         </div>
@@ -45,7 +45,7 @@
 
             <div class = "profile">
                 <i class ="far fa-bell"></i>
-                <img src="..//img/usuarioPerfil.jpg" alt="">
+                <img src="../img/usuarioPerfil.jpg" alt="">
             </div>
         </div>
 
@@ -54,7 +54,7 @@
         </h3>
 
         <div class ="values">
-            <a href="./users-admin">
+            <a href="./admin/users-admin">
                 <div class ="val-box">
                     <i class = "fas fa-users"></i>
                     <div>
@@ -94,7 +94,7 @@
                     <!----de aquí es donde se agregan usuarios en la tabla----->
                     <tr>
                         <td class ="people">
-                            <img src="..//img/usuarioPerfil.jpg" alt="">
+                            <img src="../img/usuarioPerfil.jpg" alt="">
                             <div class ="people-descrip">
                                 <h5>Alguien</h5>
                             </div>
