@@ -91,19 +91,20 @@
         </div>
         <div>
             <div>
-                <form method="post" action="#">
-                    <select name = "nombre_ejercicio" id = "selecEjercicio">
-                        <option value = "seleccionar">Selecciona el Grupo Muscular</option>
-                    <?php while ($registro = $res->fetch_assoc()):?>
-                        <optgroup class = "grupo_muscular" label = "<?php echo $registro['grupo_muscular'];?>">
-                        <option class = "nombre_ejercicio"><?php echo $registro['nombre_ejercicio'];?></option>
-                        <?php $seleccionado = $registro['nombre_ejercicio']?>
-                    <?php endwhile;?>
-                        </optgroup>
-                    </select>
-                    <input type="submit" value="Añadir">
-                </form>
-                <?php
+            <form method="post" action="#">
+            <select name="nombre_ejercicio" id="selecEjercicio">
+                <option value="seleccionar">Selecciona el Grupo Muscular</option>
+                <?php while ($registro = $res->fetch_assoc()): ?>
+                    <optgroup class="grupo_muscular" label="<?php echo $registro['grupo_muscular']; ?>">
+                        <option class="nombre_ejercicio"><?php echo $registro['nombre_ejercicio']; ?></option>
+                        <?php $seleccionado = $registro['nombre_ejercicio'] ?>
+                <?php endwhile; ?>
+                    </optgroup>
+            </select>
+                <input type="submit" name="limpiar" value="Limpiar">
+                <input type="submit" value="Añadir">
+            </form>
+                 <?php
                     session_start();
                     $con = connectDB();
 
@@ -148,31 +149,57 @@
                     }
 
                     // Aquí puedes hacer lo que desees con los datos almacenados en la variable de sesión, por ejemplo, imprimirlos en la tabla
-                    echo "<form method='post'>
-                            <table border='10' width = 30% id='resultadoTabla'>
-                                <tr>
-                                    <th>id_ejercicio</th>
-                                    <th>nombre_ejercicio</th>
-                                    <th>grupo_muscular</th>
-                                    <th>descripcion</th>
-                                    <th>imagen</th>
-                                </tr>";
-
+                   
+                    echo "<form method='post' action='./registrar_rutina.php'>";
+                    echo "<table border='10' width='30%' id='resultadoTabla'>";
+                    echo "<tr>
+                            <th>id_ejercicio</th>
+                            <th>nombre_ejercicio</th>
+                            <th>grupo_muscular</th>
+                            <th>descripcion</th>
+                            <th>imagen</th>
+                          </tr>";
+                    
+                    $filasTabla = array();
+                    $registros = array();
                     foreach ($_SESSION['seleccionados'] as $datos_select) {
                         foreach ($datos_select as $registro) {
-                            echo "<tr>";
-                            echo "<td>" . $registro['id_ejercicio'] . "</td>";
-                            echo "<td>" . $registro['nombre_ejercicio'] . "</td>";
-                            echo "<td>" . $registro['grupo_muscular'] . "</td>";
-                            echo "<td>" . $registro['descripcion'] . "</td>";
-                            echo "<td>" . $registro['imagen'] . "</td>";
-                            echo "</tr>";
+                            $fila = "<tr>";
+                            $fila .= "<td>" . $registro['id_ejercicio'] . "</td>";
+                            $fila .= "<td>" . $registro['nombre_ejercicio'] . "</td>";
+                            $fila .= "<td>" . $registro['grupo_muscular'] . "</td>";
+                            $fila .= "<td>" . $registro['descripcion'] . "</td>";
+                            $fila .= "<td><img src='../../img/ejercicios/" . $registro['imagen'] . "' width='65px' height='55px'></td>";
+                            $fila .= "</tr>";
+                            $registros[] = $registro;
+                            $filasTabla[] = $fila;
                         }
                     }
-
-                    echo "</table>
-                        <input type='submit' name='limpiar' value='Limpiar'>
-                    </form>";
+                    
+                    // Mostrar la tabla fuera del bucle
+                    foreach ($filasTabla as $fila) {
+                        echo $fila;
+                    }
+                    
+                    echo "</table>";
+                    
+                    // Campo oculto para el nombre de la rutina
+                    echo "<input type='text' name='nombre_rutina' placeholder='Nombre de la Rutina'>";
+                    
+                    // Campos ocultos para los datos de las filas
+                    foreach ($registros as $indice => $registro) {
+                        echo "<input type='hidden' name='registros[$indice][id_ejercicio]' value='" . htmlspecialchars($registro['id_ejercicio']) . "'>";
+                        echo "<input type='hidden' name='registros[$indice][nombre_ejercicio]' value='" . htmlspecialchars($registro['nombre_ejercicio']) . "'>";
+                        echo "<input type='hidden' name='registros[$indice][grupo_muscular]' value='" . htmlspecialchars($registro['grupo_muscular']) . "'>";
+                        echo "<input type='hidden' name='registros[$indice][descripcion]' value='" . htmlspecialchars($registro['descripcion']) . "'>";
+                        echo "<input type='hidden' name='registros[$indice][imagen]' value='" . htmlspecialchars($registro['imagen']) . "'>";
+                    }
+                    
+                    // Botones para enviar el formulario
+                    echo "<input type='submit' name='registrar' value='Registrar Rutina'>";
+                    
+                    echo "</form>";
+                    
                 ?>
             </div>
         </div>
