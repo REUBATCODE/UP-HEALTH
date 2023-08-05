@@ -14,18 +14,15 @@ try {
         $imagen = $registro['imagen'];
 
         // Escapamos los datos para evitar inyección SQL (mejor aún, usar consultas preparadas)
-        $nombre_rutina = mysqli_real_escape_string($con, $nombre_rutina);
+        #$nombre_rutina = mysqli_real_escape_string($con, $nombre_rutina);
         $id_ejercicio = mysqli_real_escape_string($con, $id_ejercicio);
 
         // Preparar la consulta preparada
-        $query = "INSERT INTO detallerutina (id_rutina, id_ejercicio, nombre) VALUES (?,?, ?)";
+        $query = "INSERT INTO rutinacreada (id, id_ejercicio, nombre) VALUES (NULL,$id_ejercicio,'$nombre_rutina')";
         $stmt = $con->prepare($query);
 
         // Asociar los parámetros
-        // Aquí, asumiré que el valor de id_rutina debe ser un número entero, por lo que uso 'i' en bind_param.
         // Asegúrate de ajustar el tipo de dato si es diferente.
-        $id_rutina = "1";
-        $stmt->bind_param("iis",$id_rutina, $id_ejercicio, $nombre_rutina);
 
         // Ejecutar la consulta preparada
         $stmt->execute();

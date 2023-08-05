@@ -184,7 +184,7 @@
                     echo "</table>";
                     
                     // Campo oculto para el nombre de la rutina
-                    echo "<input type='text' name='nombre_rutina' placeholder='Nombre de la Rutina'>";
+                    echo "<input type='text' name='nombre_rutina' placeholder='SOLO NUMEROS'>";
                     
                     // Campos ocultos para los datos de las filas
                     foreach ($registros as $indice => $registro) {
