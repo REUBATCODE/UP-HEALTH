@@ -1,7 +1,6 @@
 <?php 
 
     $mensaje = $_GET['mensaje'] ?? null;
-
 ?>
 <html lang="en">
 <head>
@@ -24,8 +23,8 @@
         </div>
         <!-----crearemos el menu desplegable test ----->
             <div id = "sidebar" class ="items">
-                    <li><i class="fas fa-clipboard"></i><a href="./planesRutinas.php"> Planes de Rutinas</a></li>
-                    <li><i class="fas fa-dumbbell"></i><a href="#"> Ejercicios</a></li>
+                    <li><i class="fas fa-clipboard"></i><a href="./planesRutinas.php"> Ejercicios</a></li>
+                    <li><i class="fas fa-dumbbell"></i><a href="./crear_rutina/crear_rutina.php"> Rutinas de Entrenamiento</a></li>
                 </ul>
             </div>
         </div>
@@ -80,43 +79,7 @@
             </div>
         </div>
         <div class = "board">
-            <table width = "100%">
-                <thead>
-                    <tr>
-                        <td>Nombre</td>
-                        <td>Correo de Contacto</td>
-                        <td>Rol</td>
-                        <td>Status</td>
-                        <td>Acción</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!----de aquí es donde se agregan usuarios en la tabla----->
-                    <tr>
-                        <td class ="people">
-                            <img src="../img/usuarioPerfil.jpg" alt="">
-                            <div class ="people-descrip">
-                                <h5>Alguien</h5>
-                            </div>
-                        </td>
-                        <td class = "people-correo">
-                            <p>alguien@gmail.com</p>
-                        </td>
-                        <td class = "usuario">
-                            <p>Admin</p>
-                        </td>
-                        <td class = "status">
-                            <p>Activo</p>
-                        </td>
-
-                        <td class ="edit"><a href="#"> Edit</a></td>
-
-                    </tr>
-                    <!---aqui termina-->
-                </tbody>
-            </table>
         </div>
-
     </section>
 
 

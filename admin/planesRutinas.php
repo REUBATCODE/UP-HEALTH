@@ -34,7 +34,7 @@
         <div id = "sidebar" class ="items">
             <ul>
                 <li><i class="fas fa-clipboard"></i><a href="./planesRutinas.php" > Ejercicios</a></li>
-                <li><i class="fas fa-dumbbell"></i><a href="#"> Rutinas de Entrenamiento</a></li>
+                <li><i class="fas fa-dumbbell"></i><a href="./crear_rutina/crear_rutina.php"> Rutinas de Entrenamiento</a></li>
             </ul>
         </div>
     </div> 

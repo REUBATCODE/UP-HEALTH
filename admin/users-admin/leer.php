@@ -55,8 +55,10 @@
             <th># Empleado</th>
             <th>Nombre</th>
             <th>Celular</th>
+            <th>Correo</th>
             <th>Status</th>
             <th>Rol</th>
+            <th>Acción</th>
             </tr>
         </thead>
         <tbody>
@@ -75,6 +77,9 @@
                 <td>
                     <?php echo $adminRow['numero_celular'];?>
 
+                </td>
+                <td>
+                    <?php echo $adminRow['correo'];?>
                 </td>
                 <td>
                     <?php echo $adminRow['status'];?>
