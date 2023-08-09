@@ -2,8 +2,7 @@
     /* ESTABLECEMOS LA CONEXIÓN*/
     $conexion = new mysqli("localhost", "root", "", "uphealth") or die("Por alguna razón, no se pudo conectar al servidor.");
     /* ESTABLECEMOS LAS VARIABLES DE COMANDO*/
-    $queryselect="SELECT Correo FROM usuarios WHERE Correo='".$_POST['correo']."' AND Password= '".$_POST['contrasena']."';";
-    echo $queryselect;
+    $queryselect="SELECT nombre_usuario FROM usuarios WHERE Correo='".$_POST['correo']."' AND Password= '".$_POST['contrasena']."';";
     
     $comando= mysqli_query($conexion, $queryselect);
 
@@ -11,12 +10,15 @@
         {
             //INICIAMOS SESION
             session_start();
-            $_SESSION['usuario']=$_POST['correo'];
-            header('location: menu.php');
-            
+            while($row=mysqli_fetch_assoc($comando))
+            {
+                $_SESSION["usuario"] = $row["nombre_usuario"];
+            }
+            header('location: ../index.php');
+           
         }
         else
         {
-            header('location: index.php?error=100');
+            //header('location: index.php?error=100');
         }
 ?>
