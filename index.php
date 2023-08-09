@@ -23,7 +23,6 @@
                     </a>
                     <nav class="nav">
                         <a href="./">HOME</a>
-                        <a href="./singin.php">Registrarse</a>
                         <a href="./login_usuarios/login.php">Iniciar Sesion</a>
                     </nav>
                     <p>Bienvenido <?php echo $_SESSION["usuario"] ?>
