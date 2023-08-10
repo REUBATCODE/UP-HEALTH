@@ -10,6 +10,11 @@
     <title>UpHealth</title>
 </head>
 <body>
+    <?php
+    session_start();
+    printf($_SESSION["usuario"]);
+    ?>
+
     <header class="header">
         <div class="contenedor contenido-header"> 
                 <div class="barra">
@@ -18,9 +23,10 @@
                     </a>
                     <nav class="nav">
                         <a href="./">HOME</a>
-                        <a href="./singin.php">Registrarse</a>
-                        <a href="./login.php">Iniciar Session</a>
+                        <a href="./login_usuarios/login.php">Iniciar Sesion</a>
                     </nav>
+                    <p>Bienvenido <?php echo $_SESSION["usuario"] ?>
+                    </p>
                 </div>
         </div>
     </header>
@@ -30,7 +36,7 @@
         <section class="subscribete"> 
             <div class="subscribete-comprar">   
                 <a href="./">
-                    <p>Empieza Ya!!</p>
+                    <p>¡Empieza Ya!</p>
                 </a>
             </div>
         </section>
