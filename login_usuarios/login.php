@@ -11,7 +11,7 @@
   </div>
   
   <div class="login-form">
-    <form action="validar.php" method="post">
+    <form action="../login_usuarios/validar.php" method="post">
       <input type="email" name=correo placeholder="Correo electrónico" required><br>
       <input type="password" name=contrasena placeholder="Contraseña" required><br>
       <input type="submit" value="Iniciar sesión">
