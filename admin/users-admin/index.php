@@ -66,8 +66,7 @@
             <div class ="val-box">
                 <i class = "fas fa-heart"></i>
                 <div>
-                    <h3> Ejercicios</h3>
-                    <span> Lista de Ejercicios</span>
+                <h3><a href="../../login_usuarios/usuarios.php"> Clientes</a></h3>
                 </div>
             </div>
             <div class ="val-box">
