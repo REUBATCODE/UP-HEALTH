@@ -25,7 +25,7 @@
                         <a href="./login_usuarios/login.php">Iniciar Sesion</a>
                         <a href="./admin/login.php">Iniciar Sesion Admin</a>
                     </nav>
-                    <p>Bienvenido 
+                    <p>Bienvenido <?php echo $_SESSION["usuario"]?> 
                     </p>
                 </div>
         </div>
