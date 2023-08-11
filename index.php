@@ -24,8 +24,14 @@
                         <a href="./">HOME</a>
                         <a href="./login_usuarios/login.php">Iniciar Sesion</a>
                         <a href="./admin/login.php">Iniciar Sesion Admin</a>
+                        <a href="./login_usuarios/cerrarsesion.php">Cerrar Sesión</a>
+
                     </nav>
-                    <p>Bienvenido <?php echo $_SESSION["usuario"]?> 
+                    <p>Bienvenido <?php 
+                    if(!empty($_SESSION["usuario"])){
+                        echo $_SESSION["usuario"];}
+                        else{
+                        }?>
                     </p>
                 </div>
         </div>
